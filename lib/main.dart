@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:wifi_scan/wifi_scan.dart';
-
+import 'dart:async';
 
 void main() => runApp(const MyApp());
 
@@ -298,7 +298,7 @@ class _WelcomePageState extends State<WelcomePage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MyApp()),
+                  MaterialPageRoute(builder: (context) => const ApplicationPageRoute()),
                 );
               },
               // Container
@@ -788,6 +788,226 @@ class _WiFiListTile extends StatelessWidget {
       visualDensity: VisualDensity.compact,
       title: Text(title),
       subtitle: Text(accessPoint.capabilities),
+    );
+  }
+}
+
+class ApplicationPageRoute extends StatelessWidget {
+  const ApplicationPageRoute({Key? key}) : super(key: key);
+
+  static const String_title = 'ApplicationPage';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: const ApplicationPage(),
+    );
+  }
+}
+
+class ApplicationPage extends StatefulWidget {
+  const ApplicationPage({Key? key}) : super(key: key);
+
+  @override
+  State<ApplicationPage> createState() => _ApplicationPageState();
+}
+
+class _ApplicationPageState extends State<ApplicationPage> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  get body => null;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Applications'),
+      ),
+      body: ListView(
+        children: <Widget>[
+          Container(
+              padding: const EdgeInsets.only(top: 30)
+          ),
+          Container(
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(
+                    width: 2.0, color: CupertinoColors.systemGrey3),
+              ),
+            ),
+            child: CupertinoButton(
+                alignment: Alignment.centerLeft,
+                padding: const EdgeInsets.only(top: 25, left: 30, bottom: 25),
+                child: Text('Timer',
+                  textAlign: TextAlign.left,
+                  style: const TextStyle(color: Colors.black),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TimerPageRoute()),
+                  );
+                }
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(width: 2.0, color: CupertinoColors.systemGrey3),
+              ),
+            ),
+            child: CupertinoButton(
+                alignment: Alignment.centerLeft,
+                padding: const EdgeInsets.only(top:25, left: 30, bottom:25),
+                child: Text('Alarm',
+                  textAlign: TextAlign.left,
+                  style: const TextStyle(color: Colors.black),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const AlarmPageRoute()),
+                  );
+                }
+            ),
+          ),
+          Container(
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(width: 2.0, color: CupertinoColors.systemGrey3),
+              ),
+            ),
+            child: CupertinoButton(
+                alignment: Alignment.centerLeft,
+                padding: const EdgeInsets.only(top:25, left: 30, bottom:25),
+                child: Text('Calendar',
+                  textAlign: TextAlign.left,
+                  style: const TextStyle(color: Colors.black),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const CalendarPageRoute()),
+                  );
+                }
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class TimerPageRoute extends StatelessWidget {
+  const TimerPageRoute({Key? key}) : super(key: key);
+
+  static const String_title = 'TimerPage';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: const TimerPage(),
+    );
+  }
+}
+
+
+
+
+class TimerPage extends StatefulWidget {
+  const TimerPage({Key? key}) : super(key: key);
+
+  @override
+  State<TimerPage> createState() => _TimerPageState();
+}
+
+class _TimerPageState extends State<TimerPage> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  get body => null;
+  Timer? countdownTimer;
+  Duration myDuration = Duration(days: 5);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+        title: Text('Timer'),
+    ),
+    );
+  }
+}
+
+class AlarmPageRoute extends StatelessWidget {
+  const AlarmPageRoute({Key? key}) : super(key: key);
+
+  static const String_title = 'AlarmPage';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: const AlarmPage(),
+    );
+  }
+}
+
+class AlarmPage extends StatefulWidget {
+  const AlarmPage({Key? key}) : super(key: key);
+
+  @override
+  State<AlarmPage> createState() => _AlarmPageState();
+}
+
+class _AlarmPageState extends State<AlarmPage> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  get body => null;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Alarm'),
+      ),
+    );
+  }
+}
+
+class CalendarPageRoute extends StatelessWidget {
+  const CalendarPageRoute({Key? key}) : super(key: key);
+
+  static const String_title = 'CalendarPage';
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: const CalendarPage(),
+    );
+  }
+}
+
+class CalendarPage extends StatefulWidget {
+  const CalendarPage({Key? key}) : super(key: key);
+
+  @override
+  State<CalendarPage> createState() => _CalendarPageState();
+}
+
+class _CalendarPageState extends State<CalendarPage> {
+  TextEditingController nameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  get body => null;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Calendar'),
+      ),
     );
   }
 }
