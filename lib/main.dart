@@ -1,9 +1,9 @@
 import 'dart:async';
+
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:wifi_scan/wifi_scan.dart';
-
 
 void main() => runApp(const MyApp());
 
@@ -44,13 +44,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           children: <Widget>[
             Container(
                 child: Center(
-                  child: SizedBox(
-                    width: 110.0,
-                    height: 110.0,
-                    child: Image.network(
-                        "https://previews.123rf.com/images/leonardo255/leonardo2551501/leonardo255150100044/35950803-atom-icon.jpg"),
-                  ),
-                )),
+              child: SizedBox(
+                width: 110.0,
+                height: 110.0,
+                child: Image.network(
+                    "https://previews.123rf.com/images/leonardo255/leonardo2551501/leonardo255150100044/35950803-atom-icon.jpg"),
+              ),
+            )),
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
@@ -63,14 +63,14 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                 )),
             Container(
                 alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.only(top:60, left:10),
+                padding: const EdgeInsets.only(top: 60, left: 10),
                 child: const Text(
                   'Sign in',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 )),
             Container(
                 alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.only(top:10, left:10, bottom: 20),
+                padding: const EdgeInsets.only(top: 10, left: 10, bottom: 20),
                 child: const Text(
                   'Hi there! Nice to see you again.',
                   style: TextStyle(fontSize: 20, color: Colors.grey),
@@ -104,28 +104,28 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const WelcomePageRoute()),
+                      MaterialPageRoute(
+                          builder: (context) => const WelcomePageRoute()),
                     );
                     print(nameController.text);
                     print(passwordController.text);
                   },
-                )
-            ),
+                )),
             Container(
                 alignment: Alignment.center,
-                padding: const EdgeInsets.only(top:170),
+                padding: const EdgeInsets.only(top: 170),
                 child: TextButton(
-                    child: const Text('Sign up', style: TextStyle(fontSize: 20)),
+                    child:
+                        const Text('Sign up', style: TextStyle(fontSize: 20)),
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const SignUpPageRoute()),
+                        MaterialPageRoute(
+                            builder: (context) => const SignUpPageRoute()),
                       );
-                    }
-                )),
+                    })),
             Row(
-              children: <Widget>[
-              ],
+              children: <Widget>[],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
           ],
@@ -167,13 +167,13 @@ class _SignUpPageState extends State<SignUpPage> {
           children: <Widget>[
             Container(
                 child: Center(
-                  child: SizedBox(
-                    width: 110.0,
-                    height: 110.0,
-                    child: Image.network(
-                        "https://previews.123rf.com/images/leonardo255/leonardo2551501/leonardo255150100044/35950803-atom-icon.jpg"),
-                  ),
-                )),
+              child: SizedBox(
+                width: 110.0,
+                height: 110.0,
+                child: Image.network(
+                    "https://previews.123rf.com/images/leonardo255/leonardo2551501/leonardo255150100044/35950803-atom-icon.jpg"),
+              ),
+            )),
             Container(
                 alignment: Alignment.center,
                 padding: const EdgeInsets.all(10),
@@ -186,14 +186,14 @@ class _SignUpPageState extends State<SignUpPage> {
                 )),
             Container(
                 alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.only(top:60, left:10),
+                padding: const EdgeInsets.only(top: 60, left: 10),
                 child: const Text(
                   'Sign up',
                   style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                 )),
             Container(
                 alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.only(top:10, left:10, bottom: 20),
+                padding: const EdgeInsets.only(top: 10, left: 10, bottom: 20),
                 child: const Text(
                   'Hi there! Nice to meet you.',
                   style: TextStyle(fontSize: 20, color: Colors.grey),
@@ -228,12 +228,9 @@ class _SignUpPageState extends State<SignUpPage> {
                       Navigator.pop(context);
                       print(nameController.text);
                       print(passwordController.text);
-                    }
-                )
-            ),
+                    })),
             Row(
-              children: <Widget>[
-              ],
+              children: <Widget>[],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
           ],
@@ -274,7 +271,7 @@ class _WelcomePageState extends State<WelcomePage> {
         child: ListView(
           children: <Widget>[
             Container(
-                padding: const EdgeInsets.only(top:20),
+                padding: const EdgeInsets.only(top: 20),
                 child: Center(
                   child: SizedBox(
                     width: 130.0,
@@ -285,7 +282,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 )),
             Container(
                 alignment: Alignment.center,
-                padding: const EdgeInsets.only(bottom:110),
+                padding: const EdgeInsets.only(bottom: 110),
                 child: const Text(
                   'Jane Doe',
                   style: TextStyle(
@@ -308,74 +305,27 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                       color: Colors.blue,
-                      borderRadius: BorderRadius.all(Radius.circular(5))
-                  ),
+                      borderRadius: BorderRadius.all(Radius.circular(5))),
                   child: Container(
                     child: Row(
                       children: <Widget>[
                         Expanded(
-                          child: Image.network('https://www.pngfind.com/pngs/b/680-6800118_home-icon-png-transparent.png',
+                          child: Image.network(
+                            'https://www.pngfind.com/pngs/b/680-6800118_home-icon-png-transparent.png',
                             height: 25,
                             width: 25,
                           ),
                         ),
                         Expanded(
-                          child: Text('Home', textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20),),
-                        ),
-                        Expanded(
-                          child: Image.network('https://iili.io/pPmDUG.png',
-                            height: 25,
-                            width: 25,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-
-            Container(
-              padding: const EdgeInsets.only(top: 100),
-            ),
-
-            GestureDetector(
-              // When the child is tapped, do your work
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ConnectionPageRoute()),
-                );
-              },
-              // Container
-              child: SizedBox(
-                width: 35.0,
-                height: 50.0,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.all(Radius.circular(5))
-                  ),
-                  child: Container(
-                    child: Row(
-                      children: <Widget>[
-                        Expanded(
-                          child: Image.network('https://www.pngaaa.com/api-download/4877784',
-                            height: 28,
-                            width: 28,
+                          child: Text(
+                            'Home',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white, fontSize: 20),
                           ),
                         ),
                         Expanded(
-                          child: Text('Devices', textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20),),
-                        ),
-                        Expanded(
-                          child: Image.network('https://iili.io/pPmDUG.png',
+                          child: Image.network(
+                            'https://iili.io/pPmDUG.png',
                             height: 25,
                             width: 25,
                           ),
@@ -386,17 +336,16 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
             ),
-
             Container(
               padding: const EdgeInsets.only(top: 100),
             ),
-
             GestureDetector(
               // When the child is tapped, do your work
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const SettingsPageRoute()),
+                  MaterialPageRoute(
+                      builder: (context) => const ConnectionPageRoute()),
                 );
               },
               // Container
@@ -406,25 +355,77 @@ class _WelcomePageState extends State<WelcomePage> {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                       color: Colors.blue,
-                      borderRadius: BorderRadius.all(Radius.circular(5))
-                  ),
+                      borderRadius: BorderRadius.all(Radius.circular(5))),
                   child: Container(
                     child: Row(
                       children: <Widget>[
                         Expanded(
-                          child: Image.network('https://iili.io/piOjp4.png',
+                          child: Image.network(
+                            'https://www.pngaaa.com/api-download/4877784',
                             height: 28,
                             width: 28,
                           ),
                         ),
                         Expanded(
-                          child: Text('Settings', textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20),),
+                          child: Text(
+                            'Devices',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
                         ),
                         Expanded(
-                          child: Image.network('https://iili.io/pPmDUG.png',
+                          child: Image.network(
+                            'https://iili.io/pPmDUG.png',
+                            height: 25,
+                            width: 25,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              padding: const EdgeInsets.only(top: 100),
+            ),
+            GestureDetector(
+              // When the child is tapped, do your work
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SettingsPageRoute()),
+                );
+              },
+              // Container
+              child: SizedBox(
+                width: 35.0,
+                height: 50.0,
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.all(Radius.circular(5))),
+                  child: Container(
+                    child: Row(
+                      children: <Widget>[
+                        Expanded(
+                          child: Image.network(
+                            'https://iili.io/piOjp4.png',
+                            height: 28,
+                            width: 28,
+                          ),
+                        ),
+                        Expanded(
+                          child: Text(
+                            'Settings',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        ),
+                        Expanded(
+                          child: Image.network(
+                            'https://iili.io/pPmDUG.png',
                             height: 25,
                             width: 25,
                           ),
@@ -436,8 +437,7 @@ class _WelcomePageState extends State<WelcomePage> {
               ),
             ),
             Row(
-              children: <Widget>[
-              ],
+              children: <Widget>[],
               mainAxisAlignment: MainAxisAlignment.center,
             ),
           ],
@@ -481,159 +481,161 @@ class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Settings'),
-      ),
-      body: ListView(
-        children: <Widget>[
-          Container(
-            padding: const EdgeInsets.only(top: 10)
-          ),
-          CupertinoSearchTextField(
-            controller: textController,
-            placeholder: 'Search',
-          ),
-          Container(
-              padding: const EdgeInsets.only(top: 50)
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(width: 2.0, color: CupertinoColors.systemGrey3),
-              ),
+        appBar: AppBar(
+          title: Text('Settings'),
+        ),
+        body: ListView(
+          children: <Widget>[
+            Container(padding: const EdgeInsets.only(top: 10)),
+            CupertinoSearchTextField(
+              controller: textController,
+              placeholder: 'Search',
             ),
-            child: CupertinoButton(
-                alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.only(top:25, left: 30, bottom:25),
-                child: Text('Connect a Device',
-                          textAlign: TextAlign.left,
-                          style: const TextStyle(color: Colors.black),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const ConnectionPageRoute()),
-                  );
-                }
-            ),
-          ),
-          IntrinsicHeight(
-            child: Container(
-              padding: const EdgeInsets.only(top: 10, bottom:10),
+            Container(padding: const EdgeInsets.only(top: 50)),
+            Container(
               decoration: BoxDecoration(
                 border: Border(
-                  bottom: BorderSide(width: 2.0, color: CupertinoColors.systemGrey3),
+                  bottom: BorderSide(
+                      width: 2.0, color: CupertinoColors.systemGrey3),
                 ),
               ),
-              child: CupertinoFormRow(
-                prefix: Row(
-                  children: <Widget>[
-                    const SizedBox(width: 10),
-                    const Text('Retain Data'),
-                  ],
+              child: CupertinoButton(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(top: 25, left: 30, bottom: 25),
+                  child: Text(
+                    'Connect a Device',
+                    textAlign: TextAlign.left,
+                    style: const TextStyle(color: Colors.black),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const ConnectionPageRoute()),
+                    );
+                  }),
+            ),
+            IntrinsicHeight(
+              child: Container(
+                padding: const EdgeInsets.only(top: 10, bottom: 10),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                        width: 2.0, color: CupertinoColors.systemGrey3),
+                  ),
                 ),
-                child: CupertinoSwitch(
-                  // This bool value toggles the switch.
-                  value: retainData,
-                  thumbColor: CupertinoColors.systemBlue,
-                  trackColor: CupertinoColors.systemGrey.withOpacity(0.14),
-                  activeColor: CupertinoColors.systemGrey.withOpacity(0.64),
-                  onChanged: (bool? value) {
-                    // This is called when the user toggles the switch.
-                    setState(() {
-                      retainData = value!;
-                    });
-                  },
+                child: CupertinoFormRow(
+                  prefix: Row(
+                    children: <Widget>[
+                      const SizedBox(width: 10),
+                      const Text('Retain Data'),
+                    ],
+                  ),
+                  child: CupertinoSwitch(
+                    // This bool value toggles the switch.
+                    value: retainData,
+                    thumbColor: CupertinoColors.systemBlue,
+                    trackColor: CupertinoColors.systemGrey.withOpacity(0.14),
+                    activeColor: CupertinoColors.systemGrey.withOpacity(0.64),
+                    onChanged: (bool? value) {
+                      // This is called when the user toggles the switch.
+                      setState(() {
+                        retainData = value!;
+                      });
+                    },
+                  ),
                 ),
               ),
             ),
-          ),
-          IntrinsicHeight(
-            child: Container(
-              padding: const EdgeInsets.only(top: 10, bottom:10),
+            IntrinsicHeight(
+              child: Container(
+                padding: const EdgeInsets.only(top: 10, bottom: 10),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                        width: 2.0, color: CupertinoColors.systemGrey3),
+                  ),
+                ),
+                child: CupertinoFormRow(
+                  prefix: Row(
+                    children: <Widget>[
+                      const SizedBox(width: 10),
+                      const Text('Track Search History')
+                    ],
+                  ),
+                  child: CupertinoSwitch(
+                    // This bool value toggles the switch.
+                    value: searchTrack,
+                    thumbColor: CupertinoColors.systemBlue,
+                    trackColor: CupertinoColors.systemGrey.withOpacity(0.14),
+                    activeColor: CupertinoColors.systemGrey.withOpacity(0.64),
+                    onChanged: (bool? value) {
+                      // This is called when the user toggles the switch.
+                      setState(() {
+                        searchTrack = value!;
+                      });
+                    },
+                  ),
+                ),
+              ),
+            ),
+            IntrinsicHeight(
+              child: Container(
+                padding: const EdgeInsets.only(top: 10, bottom: 10),
+                decoration: BoxDecoration(
+                  border: Border(
+                    bottom: BorderSide(
+                        width: 2.0, color: CupertinoColors.systemGrey3),
+                  ),
+                ),
+                child: CupertinoFormRow(
+                  prefix: Row(
+                    children: <Widget>[
+                      const SizedBox(width: 10),
+                      const Text('Access Location')
+                    ],
+                  ),
+                  child: CupertinoSwitch(
+                    // This bool value toggles the switch.
+                    value: accessLocation,
+                    thumbColor: CupertinoColors.systemBlue,
+                    trackColor: CupertinoColors.systemGrey.withOpacity(0.14),
+                    activeColor: CupertinoColors.systemGrey.withOpacity(0.64),
+                    onChanged: (bool? value) {
+                      // This is called when the user toggles the switch.
+                      setState(() {
+                        accessLocation = value!;
+                      });
+                    },
+                  ),
+                ),
+              ),
+            ),
+            Container(
               decoration: BoxDecoration(
                 border: Border(
-                  bottom: BorderSide(width: 2.0, color: CupertinoColors.systemGrey3),
+                  bottom: BorderSide(
+                      width: 2.0, color: CupertinoColors.systemGrey3),
                 ),
               ),
-              child: CupertinoFormRow(
-                prefix: Row(
-                  children: <Widget>[
-                    const SizedBox(width: 10),
-                    const Text('Track Search History')
-                  ],
-                ),
-                child: CupertinoSwitch(
-                  // This bool value toggles the switch.
-                  value: searchTrack,
-                  thumbColor: CupertinoColors.systemBlue,
-                  trackColor: CupertinoColors.systemGrey.withOpacity(0.14),
-                  activeColor: CupertinoColors.systemGrey.withOpacity(0.64),
-                  onChanged: (bool? value) {
-                    // This is called when the user toggles the switch.
-                    setState(() {
-                      searchTrack = value!;
-                    });
-                  },
-                ),
-              ),
+              child: CupertinoButton(
+                  alignment: Alignment.centerLeft,
+                  padding: const EdgeInsets.only(top: 25, left: 30, bottom: 25),
+                  child: Text(
+                    'Update Software',
+                    textAlign: TextAlign.left,
+                    style: const TextStyle(color: Colors.black),
+                  ),
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WelcomePageRoute()),
+                    );
+                  }),
             ),
-          ),
-          IntrinsicHeight(
-            child: Container(
-              padding: const EdgeInsets.only(top: 10, bottom:10),
-              decoration: BoxDecoration(
-                border: Border(
-                  bottom: BorderSide(width: 2.0, color: CupertinoColors.systemGrey3),
-                ),
-              ),
-              child: CupertinoFormRow(
-                prefix: Row(
-                  children: <Widget>[
-                    const SizedBox(width: 10),
-                    const Text('Access Location')
-                  ],
-                ),
-                child: CupertinoSwitch(
-                  // This bool value toggles the switch.
-                  value: accessLocation,
-                  thumbColor: CupertinoColors.systemBlue,
-                  trackColor: CupertinoColors.systemGrey.withOpacity(0.14),
-                  activeColor: CupertinoColors.systemGrey.withOpacity(0.64),
-                  onChanged: (bool? value) {
-                    // This is called when the user toggles the switch.
-                    setState(() {
-                      accessLocation = value!;
-                    });
-                  },
-                ),
-              ),
-            ),
-          ),
-          Container(
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(width: 2.0, color: CupertinoColors.systemGrey3),
-              ),
-            ),
-            child: CupertinoButton(
-                alignment: Alignment.centerLeft,
-                padding: const EdgeInsets.only(top:25,left: 30, bottom:25),
-                child: Text('Update Software',
-                  textAlign: TextAlign.left,
-                  style: const TextStyle(color: Colors.black),
-                ),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const WelcomePageRoute()),
-                  );
-                }
-            ),
-          ),
-        ],
-      )
-    );
+          ],
+        ));
   }
 }
 
@@ -693,10 +695,11 @@ class _ConnectionPageState extends State<ConnectionPage> {
 
   Future<void> _getScannedResults(BuildContext context) async {
     if (await _canGetScannedResults(context)) {
-      subscription = WiFiScan.instance.onScannedResultsAvailable.listen((result) => {
-        setState(() => accessPoints = result),
-        print(result),
-      });
+      subscription =
+          WiFiScan.instance.onScannedResultsAvailable.listen((result) => {
+                setState(() => accessPoints = result),
+                print(result),
+              });
     }
   }
 
@@ -708,7 +711,7 @@ class _ConnectionPageState extends State<ConnectionPage> {
           children: <Widget>[
             Container(
                 alignment: Alignment.center,
-                padding: const EdgeInsets.only(top:20),
+                padding: const EdgeInsets.only(top: 20),
                 child: const Text(
                   'Local Wireless Connections',
                   style: TextStyle(
@@ -718,10 +721,11 @@ class _ConnectionPageState extends State<ConnectionPage> {
                 )),
             IntrinsicHeight(
               child: Container(
-                padding: const EdgeInsets.only(top: 10, bottom:10),
+                padding: const EdgeInsets.only(top: 10, bottom: 10),
                 decoration: BoxDecoration(
                   border: Border(
-                    bottom: BorderSide(width: 2.0, color: CupertinoColors.systemGrey3),
+                    bottom: BorderSide(
+                        width: 2.0, color: CupertinoColors.systemGrey3),
                   ),
                 ),
                 child: CupertinoFormRow(
@@ -748,7 +752,7 @@ class _ConnectionPageState extends State<ConnectionPage> {
                       // This is called when the user toggles the switch.
                       setState(() {
                         wifi = value!;
-                        if(wifi) {
+                        if (wifi) {
                           _startScan(context);
                           _getScannedResults(context);
                         }
@@ -766,24 +770,23 @@ class _ConnectionPageState extends State<ConnectionPage> {
                       shrinkWrap: true,
                       itemCount: accessPoints.length,
                       itemBuilder: (context, i) =>
-                        _WiFiListTile(accessPoint: accessPoints[i]),
-              ),
+                          _WiFiListTile(accessPoint: accessPoints[i]),
+                    ),
             )
           ],
-        )
-    );
+        ));
   }
 }
 
 class _WiFiListTile extends StatelessWidget {
   final WiFiAccessPoint accessPoint;
 
-  const _WiFiListTile({Key? key, required this.accessPoint})
-      : super(key: key);
+  const _WiFiListTile({Key? key, required this.accessPoint}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final title = accessPoint.ssid.isNotEmpty ? accessPoint.ssid : "Hidden SSID";
+    final title =
+        accessPoint.ssid.isNotEmpty ? accessPoint.ssid : "Hidden SSID";
     return ListTile(
       visualDensity: VisualDensity.compact,
       title: Text(title),
