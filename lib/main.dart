@@ -3,7 +3,6 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:wifi_scan/wifi_scan.dart';
-import 'dart:async';
 
 void main() => runApp(const MyApp());
 
